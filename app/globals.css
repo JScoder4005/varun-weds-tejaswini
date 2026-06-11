@@ -1,26 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;1,300&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --midnight: #060d1f;
+  --deep-blue: #0d2137;
+  --ocean: #1a3a5c;
+  --coral: #d4506a;
+  --rose: #ff9eb5;
+  --gold: #c9a84c;
+  --cream: #fdf6ec;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  height: -webkit-fill-available;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--midnight);
+  color: var(--cream);
+  font-family: 'Crimson Pro', Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 2px; }
+
+/* ── Animations ── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; filter: blur(40px); }
+  50% { opacity: 0.85; filter: blur(70px); }
+}
+@keyframes shimmer-text {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.18); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  70% { transform: scale(1); }
+}
+
+/* ── Utility classes ── */
+.cinzel { font-family: 'Cinzel', serif; }
+.cormorant { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+.shimmer-gold {
+  background: linear-gradient(90deg, var(--gold) 0%, #fff3b0 25%, var(--gold) 50%, #fff3b0 75%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 4s linear infinite;
+}
+.shimmer-rose {
+  background: linear-gradient(90deg, var(--rose) 0%, #fff 30%, var(--rose) 60%, #ffd6e0 80%, var(--rose) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 3s linear infinite;
+}
+.card-glass {
+  background: rgba(13,33,55,0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212,80,106,0.2);
+}
+
+/* ── Mobile base resets ── */
+img, video { max-width: 100%; height: auto; }
+
+/* ── Responsive helpers ── */
+.section-base {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 2rem);
+  overflow: hidden;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4rem;
+  color: rgba(201,168,76,0.7);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #fdf6ec;
+}
+
+/* ── Flex row → col on small screens ── */
+@media (max-width: 640px) {
+  .flex-row-mobile-col {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hide-mobile { display: none !important; }
 }
