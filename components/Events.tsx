@@ -205,7 +205,7 @@ export default function Events() {
       >
         <EventCard
           title="Reception"
-          time="6:30 PM Onwards"
+          time="7:00 PM Onwards"
           subtitle="Evening Celebration"
           icon="🎊"
           delay={0.1}
