@@ -83,7 +83,7 @@ export default function Invitation() {
             display: "block",
             marginTop: "0.5rem"
           }}>
-            June 24, Wednesday, 2026
+            Reception: June 23 · Muhurtham: June 24, 2026
           </span>
         </motion.div>
       </div>

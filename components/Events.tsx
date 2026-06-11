@@ -12,6 +12,7 @@ function EventCard({
   icon,
   delay,
   color,
+  date,
 }: {
   title: string;
   time: string;
@@ -19,6 +20,7 @@ function EventCard({
   icon: string;
   delay: number;
   color: string;
+  date: string;
 }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -136,7 +138,7 @@ function EventCard({
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          June 24, 2026 · Wednesday
+          {date}
         </div>
       </div>
     </motion.div>
@@ -202,20 +204,22 @@ export default function Events() {
         }}
       >
         <EventCard
+          title="Reception"
+          time="6:30 PM Onwards"
+          subtitle="Evening Celebration"
+          icon="🎊"
+          delay={0.1}
+          color="#c9a84c"
+          date="June 23, 2026 · Tuesday"
+        />
+        <EventCard
           title="Muhurtham"
           time="9:15 AM — 9:45 AM"
           subtitle="Wedding Ceremony"
           icon="🪷"
-          delay={0.1}
-          color="#ff9eb5"
-        />
-        <EventCard
-          title="Reception"
-          time="7:00 PM Onwards"
-          subtitle="Evening Celebration"
-          icon="🎊"
           delay={0.3}
-          color="#c9a84c"
+          color="#ff9eb5"
+          date="June 24, 2026 · Wednesday"
         />
       </div>
 
