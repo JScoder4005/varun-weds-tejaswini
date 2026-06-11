@@ -129,6 +129,23 @@ export default function Contacts() {
         <p style={{ fontFamily: "'Cinzel',serif", fontSize: "0.55rem", letterSpacing: "0.3rem", color: "rgba(255,255,255,0.18)", marginTop: "0.4rem" }}>
           June 24, 2026
         </p>
+        <a
+          href="https://www.linkedin.com/in/uday-kumar-m-3b122b244/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex", alignItems: "center", gap: "0.4rem",
+            marginTop: "1.8rem",
+            fontFamily: "'Cinzel',serif", fontSize: "0.55rem", letterSpacing: "0.15rem",
+            color: "rgba(255,158,181,0.35)",
+            textDecoration: "none",
+            transition: "color 0.3s",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,158,181,0.7)")}
+          onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,158,181,0.35)")}
+        >
+          Made with ♥ by Uday
+        </a>
       </motion.div>
     </section>
   );

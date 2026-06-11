@@ -213,7 +213,7 @@ export default function Events() {
           title="Reception"
           time="7:00 PM Onwards"
           subtitle="Evening Celebration"
-          icon="🥂"
+          icon="🎊"
           delay={0.3}
           color="#c9a84c"
         />
