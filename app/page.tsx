@@ -4,7 +4,8 @@ import Invitation from "@/components/Invitation";
 import Couple from "@/components/Couple";
 import Events from "@/components/Events";
 import Venue from "@/components/Venue";
-import Contacts from "@/components/Contacts";
+// import Contacts from "@/components/Contacts";
+import Footer from "@/components/Footer";
 import TogetherPhoto from "@/components/TogetherPhoto";
 import ClientProviders from "@/components/ClientProviders";
 
@@ -34,8 +35,9 @@ export default function Home() {
         <Events />
         <SectionDivider />
         <Venue />
-        <SectionDivider />
-        <Contacts />
+        {/* <SectionDivider />
+        <Contacts /> */}
+        <Footer />
       </div>
     </main>
   );
